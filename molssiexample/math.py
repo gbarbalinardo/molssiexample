@@ -1,5 +1,5 @@
-
 import numpy as np
+
 
 def euler(last_n):
     if last_n < 0:
@@ -23,4 +23,3 @@ def pi(mc_points=1e7):
     x = np.random.uniform(0, 1, mc_points).reshape(-1, 2)
     area = np.sum(np.linalg.norm(x, axis=1) < 1)
     return (area / mc_points) * 8
-
