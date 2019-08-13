@@ -18,7 +18,8 @@ def factorial(n):
         return 1
 
 
-def pi(mc_points = 10000):
+def pi(mc_points=1e7):
+    mc_points = int(mc_points)
     x = np.random.uniform(0, 1, mc_points).reshape(-1, 2)
     area = np.sum(np.linalg.norm(x, axis=1) < 1)
     return (area / mc_points) * 8
