@@ -3,6 +3,7 @@ A file for executing math functions.
 """
 
 def euler(last_n):
+    last_n += 1
     e_value = 0
     for i in range(last_n):
         e_value += 1 / factorial(i)
@@ -14,4 +15,3 @@ def factorial(n):
         return n * factorial(n - 1)
     else:
         return 1
-
