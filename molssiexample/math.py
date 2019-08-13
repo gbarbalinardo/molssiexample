@@ -1,6 +1,3 @@
-"""
-A file for executing math functions.
-"""
 
 import numpy as np
 
@@ -21,14 +18,8 @@ def factorial(n):
         return 1
 
 
-def pi(mc_points):
-    x = np.random.uniform(0, 1, mc_points)
-    y = np.random.uniform(0, 1, mc_points)
-    area = 0
-    for i in range(mc_points):
-        x_value = x[i]
-        y_value = y[i]
-        if (x_value ** 2 + y_value ** 2) <= 1:
-            area += 1
-    return (area / mc_points) * 4
+def pi(mc_points = 10000):
+    x = np.random.uniform(0, 1, mc_points).reshape(-1, 2)
+    area = np.sum(np.linalg.norm(x, axis=1) < 1)
+    return (area / mc_points) * 8
 
