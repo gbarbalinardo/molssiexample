@@ -30,6 +30,5 @@ def pi(mc_points):
         y_value = y[i]
         if (x_value ** 2 + y_value ** 2) <= 1:
             area += 1
-    return (area / mc_points)
-
+    return (area / mc_points) * 4
 

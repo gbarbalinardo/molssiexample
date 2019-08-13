@@ -11,3 +11,8 @@ def test_euler_failure():
     with pytest.raises(ValueError) as exc:
         me.math.euler(-1)
     assert "positive int" in str(exc.value)
+
+@pytest.mark.parametrize('n, answer', [(1000, 3.1)])
+def test_euler(n, answer):
+    assert me.math.pi(n) == pytest.approx(answer, abs=2)
+
